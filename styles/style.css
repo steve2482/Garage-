@@ -1,0 +1,14 @@
+.container {
+	border: 1px solid black;
+	text-align: center;
+}
+
+.main-img {
+	width: 100%;
+	height: 400px;
+}
+
+.result-colllum {
+	box-sizing: border-box;
+	border: 1px solid black;
+}
