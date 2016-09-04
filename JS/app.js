@@ -1,4 +1,4 @@
-//  Get Search Results from songsterr
+//  Get Search Results from songsterr and display
 function getSongsterr(userSearch) {
   var artist = userSearch;
   $.ajax({
@@ -25,7 +25,7 @@ function getSongsterr(userSearch) {
   });
 }
 
-// Get search results from YouTube
+// Get search results from YouTube and display
 function getYouTube(userSearch) {
   var params = {
     part: 'snippet',
@@ -36,7 +36,6 @@ function getYouTube(userSearch) {
   $.getJSON(url, params, function(result) {
   })
   .done(function(result) {
-    console.log(result);
     for (var i = 0; i < result.items.length; i++) {
       var title = result.items[i].snippet.title;
       var thumbnail = result.items[i].snippet.thumbnails.medium.url;
@@ -46,17 +45,30 @@ function getYouTube(userSearch) {
     }
   });
 }
-// Get search results from Wiki
 
-// ---------------------------------------------------------------
-// ---------------------------------------------------------------
+// Get search results from Wiki and display
+function getWiki(userSearch) {
+  var title = userSearch;
+  $.ajax({
+    url: 'https://en.wikipedia.org/w/api.php?action=query&titles=' + title + '&prop=extracts&rvprop=content&format=json',
+    dataType: 'jsonp',
+    type: 'GET'
+  })
+  .done(function(result) {
+    var content = '<h2>' + result.query.pages[0].title + '</h2><br>' + result.query.pages[0].extract;
+    $('.description').append(content);
+  });
+}
+
+// ------------------------------------------------------
+// ------------------------------------------------------
 
 $(document).ready(function() {
   $('#search').submit(function(e) {
     e.preventDefault();
     var userSearch = $(this).find("input[name='search']").val();
-    console.log(userSearch);
     getSongsterr(userSearch);
     getYouTube(userSearch);
+    getWiki(userSearch);
   });
 });
