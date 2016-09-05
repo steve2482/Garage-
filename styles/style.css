@@ -1,3 +1,8 @@
+@font-face {
+	font-family: Rocker;
+	src: url("NewRocker-Regular.ttf");
+}
+
 .container {
 	width: 100%;
 	text-align: center;
@@ -7,8 +12,17 @@
 }
 
 .main-img {
-	
-	height: 400px;
+	/*background-image: url(http://www.wallpapersxl.com/get/2901581);*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 500px;
+	font-size: 32px;
+	font-family: "Rocker";
+}
+
+.main-img h1 {
+	padding-top: 100px;
 }
 
 .result-collum {
@@ -17,5 +31,6 @@
 	/*temp*/
 	box-sizing: border-box;
 	border: 1px solid black;
-	/*height: 100px;*/
+	height: 350px;
+	overflow: auto;
 }
