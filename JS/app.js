@@ -48,7 +48,12 @@ function getYouTube(userSearch) {
 
 // Get search results from Wiki and display
 function getWiki(userSearch) {
-  var title = userSearch.toUpperCase();
+  function capitalizeEachWord(str) {
+    return str.replace(/\w\S*/g, function(txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+  var title = capitalizeEachWord(userSearch);
   $.ajax({
     url: 'https://en.wikipedia.org/w/api.php?action=query&titles=' + title + '&prop=extracts&format=json',
     dataType: 'jsonp',
