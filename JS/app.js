@@ -2,7 +2,7 @@
 function getSongsterr(userSearch) {
   var artist = userSearch;
   $.ajax({
-    url: 'http://www.songsterr.com/a/ra/songs/byartists.json?artists=' + artist,
+    url: 'http://www.songsterr.com/a/ra/songs/byartists.json?artists="' + artist + '"',
     dataType: 'json',
     type: 'GET'
   })
@@ -48,15 +48,17 @@ function getYouTube(userSearch) {
 
 // Get search results from Wiki and display
 function getWiki(userSearch) {
-  var title = userSearch;
+  var title = userSearch.toUpperCase();
   $.ajax({
-    url: 'https://en.wikipedia.org/w/api.php?action=query&titles=' + title + '&prop=extracts&rvprop=content&format=json',
+    url: 'https://en.wikipedia.org/w/api.php?action=query&titles=' + title + '&prop=extracts&format=json',
     dataType: 'jsonp',
     type: 'GET'
   })
   .done(function(result) {
-    var content = '<h2>' + result.query.pages[0].title + '</h2><br>' + result.query.pages[0].extract;
-    $('.description').append(content);
+    console.log(result);
+    var pageId = Object.keys(result.query.pages);
+    var content = '<h2>' + result.query.pages[pageId].title + '</h2><br>' + result.query.pages[pageId].extract;
+    $('#wiki').append(content);
   });
 }
 
