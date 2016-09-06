@@ -20,7 +20,7 @@ function getSongsterr(userSearch) {
       return 0;
     });
     for (var i = 0; i < result.length; i++) {
-      $('.songs').append('<li class="each-song"><a href="http://www.songsterr.com/a/wa/song?id=' + result[i].id + '">' + result[i].title + '<li>');
+      $('.songs').append('<li class="each-song"><a href="https://www.songsterr.com/a/wa/song?id=' + result[i].id + '">' + result[i].title + '<li>');
     }
   });
 }
