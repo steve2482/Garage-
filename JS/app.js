@@ -2,7 +2,7 @@
 function getSongsterr(userSearch) {
   var artist = userSearch;
   $.ajax({
-    url: 'http://www.songsterr.com/a/ra/songs/byartists.json?artists="' + artist + '"',
+    url: 'https://www.songsterr.com/a/ra/songs/byartists.json?artists="' + artist + '"',
     dataType: 'json',
     type: 'GET'
   })
