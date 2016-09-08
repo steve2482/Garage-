@@ -25,6 +25,14 @@
 	padding-top: 100px;
 }
 
+#search {
+	padding-top: 16px;
+}
+
+.results {
+	display: none;
+}
+
 .result-collum {
 	display: inline-block;
 	width: 33%;
