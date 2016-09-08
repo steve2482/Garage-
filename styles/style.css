@@ -2,35 +2,83 @@
 	font-family: Rocker;
 	src: url("NewRocker-Regular.ttf");
 }
+@font-face {
+	font-family: Guitar;
+	src: url("screaminguitar.ttf");
+}
+@font-face {
+	font-family: Metal;
+	src:url("MetalMania-Regular.ttf");
+}
+
+html {
+	background-color: black;
+	font-family: "Metal";
+}
+
+html a {
+	text-decoration: none;
+	color: white;
+}
+
+.rocker {
+	font-family: "Rocker";
+}
 
 .container {
 	width: 100%;
 	text-align: center;
+	margin: auto;
 	/*Temp*/
 	border: 1px solid black;
 	box-sizing: border-box;
 }
 
 .main-img {
-	/*background-image: url(http://www.wallpapersxl.com/get/2901581);*/
+	background-image: url(http://www.wallpapersxl.com/get/2901581);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	height: 500px;
-	font-size: 32px;
-	font-family: "Rocker";
+	height: 400px;
+	font-size: 32px;	
 }
 
 .main-img h1 {
-	padding-top: 100px;
+	padding-top: 50px;
 }
 
 #search {
 	padding-top: 16px;
 }
 
+#user-request, #search-button {
+	box-sizing: border-box;
+	font-size: 25px;
+	height: 40px;
+	border: none;
+	border-radius: 3px;
+}
+
+#search-button {
+	background-color: #CD5202;
+	font-family: "Guitar";
+	padding-bottom: 8px;
+	cursor: pointer;
+}
+
+.description {
+	color: white;
+	width: 700px;
+	font-size: 20px;
+	text-align: left;
+}
+
 .results {
 	display: none;
+	color: white;
+	font-family: Helvetica;	
+	margin-top: 10px;
+	border-top: 1px solid white;
 }
 
 .result-collum {
@@ -39,6 +87,28 @@
 	/*temp*/
 	box-sizing: border-box;
 	border: 1px solid black;
-	height: 350px;
-	overflow: auto;
+	height: 500px;
+	overflow: auto;	
+}
+
+#song-list img {
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+.songs {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.each-song a:hover {
+	color: #22AAFB;
+}
+
+.thumbnail {
+	border-radius: 5px;
+}
+
+#wiki img {
+	margin-top: 5px;
 }
