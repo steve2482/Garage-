@@ -8,6 +8,8 @@ function getSongsterr(userSearch) {
     type: 'GET'
   })
   .done(function(result) {
+// Add songsterr img linking to band page
+    $('.songsterr-img').append('<a href="http://www.songsterr.com/a/wa/artist?id=' + result[0].artist.id + '"><img src="http://www.songsterr.com/WebObjects/Songsterr.woa/Contents/WebServerResources/v2/large.png?bc624c5415da5b97383954fe465257ee" height="10%" width="15%"></a>');
 // Sort the results
     result.sort(function(a, b) {
       var titleA = a.title.toUpperCase();
@@ -21,7 +23,7 @@ function getSongsterr(userSearch) {
       return 0;
     });
     for (var i = 0; i < result.length; i++) {
-      $('.songs').append('<li class="each-song"><a href="https://www.songsterr.com/a/wa/song?id=' + result[i].id + '">' + result[i].title + '<li>');
+      $('.songs').append('<li class="each-song"><a href="https://www.songsterr.com/a/wa/song?id=' + result[i].id + '">' + result[i].title + '<li></a>');
     }
   });
 }
@@ -38,6 +40,7 @@ function getYouTube(userSearch) {
   $.getJSON(url, params, function(result) {
   })
   .done(function(result) {
+    $('.youtube-img').append('<a href="https://www.youtube.com/results?search_query=' + userSearch + '"><img src="https://d1t6gdblzuqy70.cloudfront.net/content/uploads/2015/01/youtube-logo.jpg" height="12%" width="12%"></a>');
     for (var i = 0; i < result.items.length; i++) {
       var title = result.items[i].snippet.title;
       var thumbnail = result.items[i].snippet.thumbnails.medium.url;
@@ -64,6 +67,7 @@ function getWiki(userSearch) {
   })
   .done(function(result) {
     console.log(result);
+    $('.wiki-img').append('<a href="https://en.wikipedia.org/wiki/' + userSearch + '_(band)"><img src="http://wac.450f.edgecastcdn.net/80450F/1037theloon.com/files/2012/01/Wikipedia-logo-copy.jpg" height="6%" width="6%"></a>');
     var pageId = Object.keys(result.query.pages);
     var content = '<h2>' + result.query.pages[pageId].title + '</h2><br>' + result.query.pages[pageId].extract;
     $('.wiki-article').append(content);
@@ -74,8 +78,10 @@ function getWiki(userSearch) {
 
 function clearResults() {
   $('.songs').text('');
+  $('.songsterr-img').text('');
   $('.videos').text('');
   $('.wiki-article').text('');
+  $('.wiki-img').text('');
 }
 
 // ------------------------------------------------------
@@ -90,6 +96,7 @@ $(document).ready(function() {
     getYouTube(userSearch);
     getWiki(userSearch);
     $('.results').show();
+    $('.description').hide();
     $('#user-request').val('');
   });
 });
