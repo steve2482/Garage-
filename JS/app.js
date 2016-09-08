@@ -1,4 +1,5 @@
 //  Get Search Results from songsterr and display
+
 function getSongsterr(userSearch) {
   var artist = userSearch;
   $.ajax({
@@ -7,16 +8,16 @@ function getSongsterr(userSearch) {
     type: 'GET'
   })
   .done(function(result) {
+// Sort the results
     result.sort(function(a, b) {
-      var titleA = a.title.toUpperCase(); // ignore upper and lowercase
-      var titleB = b.title.toUpperCase(); // ignore upper and lowercase
+      var titleA = a.title.toUpperCase();
+      var titleB = b.title.toUpperCase();
       if (titleA < titleB) {
         return -1;
       }
       if (titleA > titleB) {
         return 1;
       }
-      // names must be equal
       return 0;
     });
     for (var i = 0; i < result.length; i++) {
@@ -26,6 +27,7 @@ function getSongsterr(userSearch) {
 }
 
 // Get search results from YouTube and display
+
 function getYouTube(userSearch) {
   var params = {
     part: 'snippet',
@@ -47,6 +49,7 @@ function getYouTube(userSearch) {
 }
 
 // Get search results from Wiki and display
+
 function getWiki(userSearch) {
   function capitalizeEachWord(str) {
     return str.replace(/\w\S*/g, function(txt) {
@@ -63,8 +66,16 @@ function getWiki(userSearch) {
     console.log(result);
     var pageId = Object.keys(result.query.pages);
     var content = '<h2>' + result.query.pages[pageId].title + '</h2><br>' + result.query.pages[pageId].extract;
-    $('#wiki').append(content);
+    $('.wiki-article').append(content);
   });
+}
+
+// Clear results display
+
+function clearResults() {
+  $('.songs').text('');
+  $('.videos').text('');
+  $('.wiki-article').text('');
 }
 
 // ------------------------------------------------------
@@ -73,9 +84,12 @@ function getWiki(userSearch) {
 $(document).ready(function() {
   $('#search').submit(function(e) {
     e.preventDefault();
+    clearResults();
     var userSearch = $(this).find("input[name='search']").val();
     getSongsterr(userSearch);
     getYouTube(userSearch);
     getWiki(userSearch);
+    $('.results').show();
+    $('#user-request').val('');
   });
 });
