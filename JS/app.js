@@ -34,7 +34,8 @@ function getYouTube(userSearch) {
   var params = {
     part: 'snippet',
     key: 'AIzaSyDOA-ddJ3xi67PNWuEVlqfalhKlxDqj538',
-    q: userSearch
+    q: userSearch,
+    type: 'video'
   };
   var url = 'https://www.googleapis.com/youtube/v3/search';
   $.getJSON(url, params, function(result) {
@@ -61,16 +62,31 @@ function getWiki(userSearch) {
   }
   var title = capitalizeEachWord(userSearch);
   $.ajax({
-    url: 'https://en.wikipedia.org/w/api.php?action=query&titles=' + title + '&prop=extracts&format=json',
+    url: 'https://en.wikipedia.org/w/api.php?action=query&titles=' + title + '_(band)&prop=extracts&format=json',
     dataType: 'jsonp',
     type: 'GET'
   })
   .done(function(result) {
     console.log(result);
-    $('.wikipedia').append('<a href="https://en.wikipedia.org/wiki/' + userSearch + '_(band)"><img src="http://wac.450f.edgecastcdn.net/80450F/1037theloon.com/files/2012/01/Wikipedia-logo-copy.jpg" height="6%" width="6%"></a>');
     var pageId = Object.keys(result.query.pages);
-    var content = '<h2>' + result.query.pages[pageId].title + '</h2><br>' + result.query.pages[pageId].extract;
-    $('.wiki-article').append(content);
+    console.log(result.query.pages[pageId].extract);
+    if (result.query.pages[pageId].extract === "") {
+      $.ajax({
+        url: 'https://en.wikipedia.org/w/api.php?action=query&titles=' + title + '&prop=extracts&format=json',
+        dataType: 'jsonp',
+        type: 'GET'
+      })
+      .done(function(result) {
+        $('.wikipedia').append('<a href="https://en.wikipedia.org/wiki/' + userSearch + '_(band)"><img src="http://wac.450f.edgecastcdn.net/80450F/1037theloon.com/files/2012/01/Wikipedia-logo-copy.jpg" height="6%" width="6%"></a>');
+        var pageId = Object.keys(result.query.pages);
+        var content = '<h2>' + result.query.pages[pageId].title + '</h2><br>' + result.query.pages[pageId].extract;
+        $('.wiki-article').append(content);
+      });
+    } else {
+      $('.wikipedia').append('<a href="https://en.wikipedia.org/wiki/' + userSearch + '_(band)"><img src="http://wac.450f.edgecastcdn.net/80450F/1037theloon.com/files/2012/01/Wikipedia-logo-copy.jpg" height="6%" width="6%"></a>');
+      var content = '<h2>' + result.query.pages[pageId].title + '</h2><br>' + result.query.pages[pageId].extract;
+      $('.wiki-article').append(content);
+    }
   });
 }
 
