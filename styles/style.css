@@ -134,6 +134,11 @@ html a {
 		height: 300px;
 	}
 
+	.results-wrap {
+	margin-left: 30px;
+	margin-right: 30px;
+	}	
+
 	.result-collum {
 		display: block;
 		width: 100%;
