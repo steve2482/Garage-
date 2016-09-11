@@ -29,8 +29,6 @@ html a {
 	width: 100%;
 	text-align: center;
 	margin: auto;
-	/*Temp*/
-	border: 1px solid black;
 	box-sizing: border-box;
 }
 
@@ -45,6 +43,7 @@ html a {
 
 .main-img h1 {
 	padding-top: 50px;
+	margin-top: 0;
 }
 
 #search {
@@ -81,12 +80,17 @@ html a {
 	border-top: 1px solid white;
 }
 
+.result {
+	height: 500px;
+	overflow: auto;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
 .result-collum {
 	display: inline-block;
 	width: 33%;
-	/*temp*/
 	box-sizing: border-box;
-	border: 1px solid black;
 	height: 500px;
 	overflow: auto;	
 }
@@ -109,6 +113,26 @@ html a {
 	border-radius: 5px;
 }
 
+.wiki-article {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
 #wiki img {
 	margin-top: 5px;
 }
+
+@media only screen and (max-width: 550px) {
+	.result-collum {
+		display: block;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 1030px) {
+	.main-img {
+		font-size: 20px;
+		height: 300px;
+	}
+}
+
