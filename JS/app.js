@@ -67,7 +67,6 @@ function getWiki(userSearch) {
     type: 'GET'
   })
   .done(function(result) {
-    console.log(result);
     var pageId = Object.keys(result.query.pages);
     console.log(result.query.pages[pageId].extract);
     if (result.query.pages[pageId].extract === "") {
