@@ -6,10 +6,6 @@
 	font-family: Guitar;
 	src: url("screaminguitar.ttf");
 }
-@font-face {
-	font-family: Metal;
-	src: url("MetalMania-Regular.ttf");
-}
 
 @font-face {
 	font-family: Alte;
@@ -19,6 +15,11 @@
 html {
 	background-color: black;
 	font-family: "Alte";
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
 }
 
 html a {
@@ -49,6 +50,11 @@ html a {
 .main-img h1 {
 	padding-top: 50px;
 	margin-top: 0;
+}
+
+.description {
+	text-align: center;
+	line-height: 1.4;
 }
 
 #search {
