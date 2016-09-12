@@ -6,13 +6,9 @@
 	font-family: Guitar;
 	src: url("screaminguitar.ttf");
 }
-@font-face {
-	font-family: Metal;
-	src: url("MetalMania-Regular.ttf");
-}
 
 @font-face {
-	font-family: Alte
+	font-family: Alte;
 	src: url("alte-haas-grotesk.regular.ttf");
 }
 
