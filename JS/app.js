@@ -98,6 +98,16 @@ function clearResults() {
   $('.link').text('');
 }
 
+//  User input Validation
+
+function validateInput(userSearch) {
+  console.log(userSearch);
+  if (userSearch === "") {
+    $('.error-modal').show();
+    return true;
+  }
+}
+
 // ------------------------------------------------------
 // ------------------------------------------------------
 
@@ -106,11 +116,15 @@ $(document).ready(function() {
     e.preventDefault();
     clearResults();
     var userSearch = $(this).find("input[name='search']").val();
-    getSongsterr(userSearch);
-    getYouTube(userSearch);
-    getWiki(userSearch);
-    $('.results').show();
-    $('.description').hide();
-    $('#user-request').val('');
+    var validate = validateInput($.trim(userSearch));
+    if (!validate) {
+      console.log(validate);
+      getSongsterr(userSearch);
+      getYouTube(userSearch);
+      getWiki(userSearch);
+      $('.results').show();
+      $('.description').hide();
+      $('#user-request').val('');
+    }
   });
 });
