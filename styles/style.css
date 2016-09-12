@@ -8,12 +8,17 @@
 }
 @font-face {
 	font-family: Metal;
-	src:url("MetalMania-Regular.ttf");
+	src: url("MetalMania-Regular.ttf");
+}
+
+@font-face {
+	font-family: Alte
+	src: url("alte-haas-grotesk.regular.ttf");
 }
 
 html {
 	background-color: black;
-	font-family: "Metal";
+	font-family: "Alte";
 }
 
 html a {
@@ -75,7 +80,7 @@ html a {
 .results {
 	display: none;
 	color: white;
-	font-family: Helvetica;	
+	font-family: "Helvetica";	
 	margin-top: 10px;
 	border-top: 1px solid white;
 }
@@ -93,6 +98,10 @@ html a {
 	box-sizing: border-box;
 	height: 500px;
 	overflow: auto;	
+}
+
+.alte {
+	font-family: "Alte";
 }
 
 #song-list img {
