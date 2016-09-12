@@ -17,6 +17,11 @@ html {
 	font-family: "Alte";
 }
 
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
 html a {
 	text-decoration: none;
 	color: white;
@@ -45,6 +50,11 @@ html a {
 .main-img h1 {
 	padding-top: 50px;
 	margin-top: 0;
+}
+
+.description {
+	text-align: center;
+	line-height: 1.4;
 }
 
 #search {
