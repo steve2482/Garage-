@@ -98,7 +98,7 @@ html a {
 	margin-right: 50px;
 }
 
-.result-collum {
+.result-column {
 	display: inline-block;
 	width: 33%;
 	box-sizing: border-box;
@@ -138,7 +138,7 @@ html a {
 }
 
 @media only screen and (max-width: 425px) {
-	.result-collum {
+	.result-column {
 		font-size: 10px;
 	}
 }
@@ -154,7 +154,7 @@ html a {
 	margin-right: 30px;
 	}	
 
-	.result-collum {
+	.result-column {
 		display: block;
 		width: 100%;
 	}
