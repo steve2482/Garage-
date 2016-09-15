@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>RIFFlopedia</title>
 	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
@@ -25,21 +26,27 @@
 			</section>		
 				
 			<section class="container results">
-				<article class="result-collum" id="wiki">
+				<article class="result-column" id="wiki">
 					<p class="alte">Learn how they became one of your favorite bands<br><span class="link wikipedia"></span></p>
 					<p class="wiki-article"></p>			
 				</article>
-				<article class="result-collum" id="song-list">
+				<article class="result-column" id="song-list">
 					<p class="alte">Learn to play their songs via<br><span class="link songsterr"></span></p>			
 						<ul class="songs">
 						</ul>
 				</article>
-				<article class="result-collum" id="youtube-list">
+				<article class="result-column" id="youtube-list">
 					<p class="alte">Learn to look like them on stage<br><span class="link youtube"></span></p>
 						<p class="videos">
 						</p>
 				</article>			
 			</section>
+		</div>
+		<div class="error-modal">
+			<div class="modal-content">
+				<p>Sorry, that was not a valid search term. Please try again.</p>
+				<p class="ok-button">OK</p>
+			</div>
 		</div>	
 
 		
