@@ -1,15 +1,15 @@
 @font-face {
 	font-family: Rocker;
-	src: url("NewRocker-Regular.ttf");
+	src: url("../assets/fonts/NewRocker-Regular.ttf");
 }
 @font-face {
 	font-family: Guitar;
-	src: url("screaminguitar.ttf");
+	src: url("../assets/fonts/screaminguitar.ttf");
 }
 
 @font-face {
 	font-family: Alte;
-	src: url("alte-haas-grotesk.regular.ttf");
+	src: url("../assets/fonts/alte-haas-grotesk.regular.ttf");
 }
 
 html {
