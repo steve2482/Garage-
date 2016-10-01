@@ -108,6 +108,14 @@ function validateInput(userSearch) {
   }
 }
 
+//  Clear Error Modal
+
+function clearModal() {
+  $('.ok-button').click(function() {
+    $('.error-modal').hide();
+  });
+}
+
 // ------------------------------------------------------
 // ------------------------------------------------------
 
@@ -127,4 +135,5 @@ $(document).ready(function() {
       $('#user-request').val('');
     }
   });
+  clearModal();
 });
