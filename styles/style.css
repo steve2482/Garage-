@@ -39,7 +39,7 @@ html a {
 }
 
 .main-img {
-	background-image: url(http://www.wallpapersxl.com/get/2901581);
+	background-image: url("../assets/images/crowd.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
