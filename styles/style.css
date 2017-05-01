@@ -55,6 +55,10 @@ html a {
 .description {
 	text-align: center;
 	line-height: 1.4;
+	color: white;
+	max-width: 700px;
+	font-size: 20px;
+	text-align: left;
 }
 
 #search {
@@ -80,13 +84,6 @@ html a {
 	cursor: pointer;
 	font-size: 25px;
 
-}
-
-.description {
-	color: white;
-	max-width: 700px;
-	font-size: 20px;
-	text-align: left;
 }
 
 .results {
