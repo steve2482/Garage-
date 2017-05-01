@@ -1,0 +1,46 @@
+{
+  "name": "api-capstone",
+  "version": "1.0.0",
+  "description": "RIFFlopedia",
+  "main": "JS/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mkdir": "mkdir build",
+    "build": "npm run clean && npm run mkdir && npm run build:css && npm run build:js",
+    "watch": "npm run watch:css",
+    "clean": "rm -rf build",
+    "build:css": "npm run clean:css && lessc --source-map styles/index.less build/%npm_package_name%.%npm_package_version%.css",
+    "watch:css": "npm run build:css && chokidar \"styles/**/*.less\" -c \"npm run build.css\"",
+    "clean:css": "rm -f build/%npm_package_version%.css build/%npm_package_name%.%npm_package_version%.css.map",
+    "build:js": "npm run build:js:unminified && npm run build:js:minified",
+    "watch:js": "npm run watch:js:unminified & npm run watch:js:minified",
+    "clean:js": "npm run clean:js:unminified && npm run clean:js:minified",
+    "build:js:unminified": "npm run clean:js:unminified && webpack",
+    "watch:js:unminified": "npm run build:js:unminified && webpack --watch",
+    "clean:js:unminified": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map",
+    "build:js:minified": "npm run clean:js:minified && webpack --minify",
+    "watch:js:minified": "npm run build:js:minified && webpack --watch --minify",
+    "clean:js:minified": "rm -f build/$npm_package_name.$npm_package_version.min.js build/$npm_package_name.$npm_package_version.min.js.map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steve2482/Garage-Band.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steve2482/Garage-Band/issues"
+  },
+  "homepage": "https://github.com/steve2482/Garage-Band#readme",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "less": "^2.7.1",
+    "uglify-js": "^2.7.4",
+    "webpack": "^1.13.3"
+  }
+}
