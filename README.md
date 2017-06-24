@@ -4,7 +4,7 @@ RIFFlopedia
 
 RIFFlopedia is used to gather information about a users favorite bands. This includes the wikipedia article about the band, youtube video's of the band, and a list of all the bands songs available on Songsterr.
 
-The user can click the image(wiki, youtube, Songsterr) to be takenn to the respective pages for that band.
+The user can click the image(wiki, youtube, Songsterr) to be taken to the respective pages for that band.
 
 The user can click the youtube tumbnail to be brought to the youtube player for that video.
 
