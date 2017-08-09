@@ -8,7 +8,7 @@ The user can click the image(wiki, youtube, Songsterr) to be taken to the respec
 
 The user can click the youtube tumbnail to be brought to the youtube player for that video.
 
-The user can click each song in the song list to be take to the tablature for that song if they so chose to learn that song.
+The user can click each song in the song list to be taken to the tablature for that song if they so chose to learn that song.
 
 The user can search for another band at anytime and new results will populate.
 
